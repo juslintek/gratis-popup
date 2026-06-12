@@ -1,0 +1,161 @@
+/* Gratis Popup — front-end styles */
+
+.gratis-popup-root {
+	position: fixed;
+	inset: 0;
+	z-index: 99998;
+	display: none;
+	pointer-events: none;
+}
+
+.gratis-popup-root.is-open {
+	display: block;
+}
+
+/* Overlay (modal) variant dims the page and captures clicks. */
+.gratis-popup-root--overlay.is-open {
+	background: rgba(0, 0, 0, 0.55);
+	pointer-events: auto;
+}
+
+.gratis-popup {
+	position: fixed;
+	box-sizing: border-box;
+	z-index: 99999;
+	background: #1a1e2e;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 12px;
+	padding: 2rem;
+	max-width: 480px;
+	width: 90%;
+	box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+	color: #fff;
+	pointer-events: auto;
+	outline: none;
+}
+
+.gratis-popup--center {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.gratis-popup--br {
+	bottom: 20px;
+	right: 20px;
+}
+
+.gratis-popup--bl {
+	bottom: 20px;
+	left: 20px;
+}
+
+.gratis-popup--top {
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	max-width: 100%;
+	border-radius: 0;
+}
+
+.gratis-popup-close {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	background: none;
+	border: none;
+	color: rgba(255, 255, 255, 0.6);
+	font-size: 26px;
+	line-height: 1;
+	cursor: pointer;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+
+.gratis-popup-close:hover,
+.gratis-popup-close:focus-visible {
+	color: #fff;
+	outline: 2px solid #fff;
+	outline-offset: 2px;
+}
+
+.gratis-popup-title {
+	margin: 0 0 0.75rem;
+	font-size: 1.4rem;
+	line-height: 1.25;
+	color: #fff;
+}
+
+.gratis-popup-content {
+	font-size: 1rem;
+	line-height: 1.6;
+}
+
+.gratis-popup-content a {
+	color: #8ab4ff;
+}
+
+/* Animations — applied while opening. */
+.gratis-popup--anim-fade {
+	opacity: 0;
+	transition: opacity 0.25s ease;
+}
+
+.gratis-popup-root.is-open .gratis-popup--anim-fade {
+	opacity: 1;
+}
+
+.gratis-popup--anim-scale.gratis-popup--center {
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0.9);
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.gratis-popup-root.is-open .gratis-popup--anim-scale.gratis-popup--center {
+	opacity: 1;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+.gratis-popup--anim-slide.gratis-popup--br,
+.gratis-popup--anim-slide.gratis-popup--bl {
+	opacity: 0;
+	transform: translateY(24px);
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.gratis-popup--anim-slide.gratis-popup--top {
+	opacity: 0;
+	transform: translateY(-100%);
+	transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.gratis-popup-root.is-open .gratis-popup--anim-slide.gratis-popup--br,
+.gratis-popup-root.is-open .gratis-popup--anim-slide.gratis-popup--bl,
+.gratis-popup-root.is-open .gratis-popup--anim-slide.gratis-popup--top {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Mobile: keep slide-ins and center popups within the viewport. */
+@media (max-width: 600px) {
+	.gratis-popup {
+		width: calc(100% - 24px);
+		max-width: calc(100% - 24px);
+		padding: 1.5rem;
+	}
+
+	.gratis-popup--br,
+	.gratis-popup--bl {
+		left: 12px;
+		right: 12px;
+		bottom: 12px;
+	}
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+	.gratis-popup {
+		transition: none !important;
+	}
+}
