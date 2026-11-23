@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Gratis Popup
  * Plugin URI: https://github.com/juslintek/gratis-popup
- * Description: Conversion popups + slide-ins. Exit intent, timed, scroll-triggered, and click triggers with page targeting, cookie frequency caps, and an accessible modal. Replaces OptinMonster ($108/yr).
+ * Description: Conversion popups + slide-ins. Exit intent, timed, scroll-triggered, and click triggers with page targeting, cookie frequency caps, and an accessible modal.
  * Version: 1.0.0
  * Requires at least: 6.4
  * Requires PHP: 8.1
