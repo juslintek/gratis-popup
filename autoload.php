@@ -1,4 +1,5 @@
 <?php declare(strict_types=1);
+defined('ABSPATH') || exit;
 spl_autoload_register(function (string $className): void {
     $prefix = 'Gratis\\Popup\\';
     if (strncmp($className, $prefix, strlen($prefix)) !== 0) return;
