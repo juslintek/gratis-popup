@@ -32,6 +32,5 @@ Gratis Popup is a WordPress plugin for exit-intent, scroll-triggered, and timed 
 
 ## Related
 
-- `/Volumes/Projects/AGENTS.md` — Machine-wide agent guidance
-- `/Volumes/Projects/gratis/AGENTS.md` — Gratis plugin suite guidance
+- `https://gratis.superglobalsdevelopment.com/docs/gratis-popup/` — Gratis Popup documentation
 - `mcp-for-page-builders` — Visual auditing MCP for page builders
