@@ -84,7 +84,6 @@ final class MetaBox {
             'specific' => __('Specific post/page IDs', 'gratis-popup'),
         ];
 
-        echo '<style>.gp-field{margin:0 0 16px}.gp-field label{font-weight:600;display:block;margin-bottom:4px}.gp-field .description{color:#646970}</style>';
         echo '<table class="form-table" role="presentation"><tbody>';
 
         // Trigger.
