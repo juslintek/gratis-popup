@@ -149,9 +149,9 @@ final class Renderer {
         ];
         $pos_class = $position_classes[$position] ?? 'gratis-popup--center';
 
-        $title_id   = 'gratis-popup-title-' . $id;
-        $has_title  = '' !== trim((string) $popup->post_title);
-        $content    = apply_filters('the_content', $popup->post_content);
+        $title_id    = 'gratis-popup-title-' . $id;
+        $has_title   = '' !== trim((string) $popup->post_title);
+        $content     = do_shortcode(wpautop(wptexturize(do_blocks((string) $popup->post_content))));
         $close_label = __('Close dialog', 'gratis-popup');
 
         $wrapper_classes = 'gratis-popup-root';
